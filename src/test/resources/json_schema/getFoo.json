@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "required": [
+    "args",
+    "headers",
+    "url"
+  ],
+  "properties": {
+    "args": {
+      "$id": "#/properties/args",
+      "type": "object",
+      "title": "The Args Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "foo1": "bar1",
+          "foo2": "bar2"
+        }
+      ],
+      "required": [
+        "foo1",
+        "foo2"
+      ],
+      "properties": {
+        "foo1": {
+          "$id": "#/properties/args/properties/foo1",
+          "type": "string",
+          "title": "The Foo1 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "bar1"
+          ]
+        },
+        "foo2": {
+          "$id": "#/properties/args/properties/foo2",
+          "type": "string",
+          "title": "The Foo2 Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "bar2"
+          ]
+        }
+      }
+    },
+    "headers": {
+      "$id": "#/properties/headers",
+      "type": "object",
+      "title": "The Headers Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "accept-encoding": "gzip,deflate",
+          "x-forwarded-proto": "https",
+          "accept": "*/*",
+          "x-forwarded-port": "443",
+          "host": "postman-echo.com",
+          "user-agent": "Apache-HttpClient/4.5.5 (Java/1.8.0_241)"
+        }
+      ],
+      "required": [
+        "x-forwarded-proto",
+        "host",
+        "accept",
+        "accept-encoding",
+        "user-agent",
+        "x-forwarded-port"
+      ],
+      "properties": {
+        "x-forwarded-proto": {
+          "$id": "#/properties/headers/properties/x-forwarded-proto",
+          "type": "string",
+          "title": "The X-forwarded-proto Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "https"
+          ]
+        },
+        "host": {
+          "$id": "#/properties/headers/properties/host",
+          "type": "string",
+          "title": "The Host Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "postman-echo.com"
+          ]
+        },
+        "accept": {
+          "$id": "#/properties/headers/properties/accept",
+          "type": "string",
+          "title": "The Accept Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "*/*"
+          ]
+        },
+        "accept-encoding": {
+          "$id": "#/properties/headers/properties/accept-encoding",
+          "type": "string",
+          "title": "The Accept-encoding Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "gzip,deflate"
+          ]
+        },
+        "user-agent": {
+          "$id": "#/properties/headers/properties/user-agent",
+          "type": "string",
+          "title": "The User-agent Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Apache-HttpClient/4.5.5 (Java/1.8.0_241)"
+          ]
+        },
+        "x-forwarded-port": {
+          "$id": "#/properties/headers/properties/x-forwarded-port",
+          "type": "string",
+          "title": "The X-forwarded-port Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "443"
+          ]
+        }
+      }
+    },
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "The Url Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "https://postman-echo.com/get?foo1=bar1&foo2=bar2"
+      ]
+    }
+  }
+}
