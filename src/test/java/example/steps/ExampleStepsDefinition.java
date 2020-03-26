@@ -1,24 +1,31 @@
 package example.steps;
 
-import example.support.api.BaseRequest;
+import example.api.Auth;
+import example.api.Foo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Steps;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static net.serenitybdd.rest.SerenityRest.given;
 import static net.serenitybdd.rest.SerenityRest.then;
 
-public class ExampleStepsDefinition extends BaseRequest {
+public class ExampleStepsDefinition {
+
+    @Steps(shared = true)
+    Auth auth;
+
+    @Steps(shared = true)
+    Foo foo;
 
     @Given("I am logged into the app")
     public void sign_in() {
-        this.get(given().header("Authorization", "Basic cG9zdG1hbjpwYXNzd29yZA=="), "/basic-auth");
+        auth.loginWithBasicAuth("cG9zdG1hbjpwYXNzd29yZA==");
     }
 
     @When("I ask for foo information")
     public void i_ask_for_foo_information() {
-        this.get(given(), "/get?foo1=bar1&foo2=bar2");
+        foo.getFooInformation("foo1=bar1&foo2=bar2");
     }
 
     @Then("I should receive valid foo information")
