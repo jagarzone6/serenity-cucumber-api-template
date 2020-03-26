@@ -5,6 +5,7 @@ import example.api.Foo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.thucydides.core.annotations.Shared;
 import net.thucydides.core.annotations.Steps;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -12,10 +13,10 @@ import static net.serenitybdd.rest.SerenityRest.then;
 
 public class ExampleStepsDefinition {
 
-    @Steps(shared = true)
+    @Shared
     Auth auth;
 
-    @Steps(shared = true)
+    @Steps
     Foo foo;
 
     @Given("I am logged into the app")

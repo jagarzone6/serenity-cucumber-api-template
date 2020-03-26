@@ -1,13 +1,13 @@
 package example.api;
 
 import example.support.api.BaseRequest;
-import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.Shared;
 
 import static net.serenitybdd.rest.SerenityRest.given;
 
 public class Foo extends BaseRequest {
 
-    @Steps(shared = true)
+    @Shared
     Auth auth;
 
     public Foo() {
